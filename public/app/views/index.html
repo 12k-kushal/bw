@@ -62,7 +62,7 @@
 
         .affix-top {
           /* navbar style at top */
-          background:transparent;
+          background:#4444448a;
           border-color:transparent;
           padding: 6px;
           -webkit-transition:all 0.5s ease;
@@ -230,8 +230,8 @@
     </header>
 
 
-    <section ng-hide="main.home" style="margin:0px; padding-top: 50px;" >
-        <div class="container-fluid" style="{margin-right:15px; margin-left:15px; padding:0px;">
+    <section ng-hide="main.home" style="margin:0px; padding-top: 50px; height:100vh;" >
+        <div class="container-fluid" style="margin-right:15px; margin-left:15px; padding:0px;">
             <div class="row">
 
                 <!-- Angular View -->
@@ -757,7 +757,7 @@
     }
 
     </style>
-    <section id="footer" ng-show="main.home">
+    <section id="footer">
         <div class="container">
             <div class="row text-center text-xs-center text-sm-left text-md-left">
                 <div class="col-xs-12 col-sm-4 col-md-4" >
@@ -794,7 +794,7 @@
                 </div>
             </div>
             </br></br></br>
-            <h6 ng-show="!main.isLoggedIn" style="text-align: center; color: #fff;">Click here to get an instant quote. <a href="/login" class="page-scroll btn btn-lg btn-transparent">Get Quote</a></h6>
+            <h6 ng-show="!main.isLoggedIn" style="text-align: center; color: #fff;">Click here to get an instant quote.&nbsp&nbsp<a href="/login" class="page-scroll btn btn-lg btn-transparent" style="width: 160px;">Get Quote</a></h6>
         </br>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">

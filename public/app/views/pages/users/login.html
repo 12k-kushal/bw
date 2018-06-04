@@ -275,7 +275,7 @@ LEVEL 4. SETTINGS
     left: 75%;
   }
   .container .buttons {
-    width: 100%;
+    width: 50%;
     margin: 30px 0px;
   }
   .container .buttons button {
@@ -318,14 +318,14 @@ LEVEL 4. SETTINGS
     <div class="page__demo">
       <label class="field field_animated field_a1 page__field">
         
-        <input  ng-disabled="main.disabled || facebook.disabled || twitter.disabled || google.disabled" class="field__input" type="text" name="username" placeholder="example@example.com" ng-model="main.loginData.username" autocomplete="on" >
+        <input  ng-disabled="main.disabled || facebook.disabled || twitter.disabled || google.disabled" class="field__input" type="text" name="username" placeholder=" " ng-model="main.loginData.username" autocomplete="on" >
         <span class="field__label-wrap">
           <span class="field__label">Enter your Email</span>
         </span>
       </label>
       <p></p>
       <label class="field field_animated field_a2 page__field">
-        <input  ng-disabled="main.disabled || facebook.disabled || twitter.disabled || google.disabled" class="field__input" type="password" name="password" placeholder="Password *" ng-model="main.loginData.password" autocomplete="off">
+        <input  ng-disabled="main.disabled || facebook.disabled || twitter.disabled || google.disabled" class="field__input" type="password" name="password" placeholder=" " ng-model="main.loginData.password" autocomplete="off">
         <span class="field__label-wrap">
           <span class="field__label">Enter your Password</span>
         </span>
@@ -335,17 +335,18 @@ LEVEL 4. SETTINGS
   </div>
 </div></center>
   
-           <a href="/resetpassword" >Forgot Password?</a>
-            <button>Log in</button>
+           <a href="/resetpassword" style="float: right;">Forgot Password?</a>
+           </br>
+            <button type="submit" class="btn btn-warning" style="background-color: rgb(102, 102, 102); display:table;margin: 0 auto; width: 50%;">LOGIN<span class="glyphicon glyphicon-send"></span></button>
            
       </br>
             <div class="social"> <span>or sign up with social media</span></div>
             <div class="buttons">
                 <a href="#" ng-disabled="facebook.disabled || twitter.disabled || google.disabled" ng-click="main.facebook();"> <button class="facebook"><i class="fa fa-facebook"></i>Facebook</button> </a>
                 <a href="#" ng-disabled="facebook.disabled || twitter.disabled || google.disabled" ng-click="main.twitter();"> <button class="twitter"><i class="fa fa-twitter"></i>Twitter</button> </a>
-                <a href="#" ng-disabled="main.disabled || facebook.disabled || twitter.disabled || google.disabled" ng-click="main.google();"> <button class="google"><i class="fa fa-google-plus"></i>Google+</button> </a>
+               
             </div>
-
+</br>
                 <div class="already">Dont have an account? <a href="/register">Sign up</a></div>      
 
                                        

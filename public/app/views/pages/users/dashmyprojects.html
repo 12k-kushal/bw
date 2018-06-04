@@ -3,6 +3,8 @@
     border-color: #ffffff;
 }
 </style>
+<link rel="stylesheet" type="text/css" href="assets/css/dashboard.css">
+
 
 <div class="home" style="border: 150px;
     margin: 10px;
@@ -52,7 +54,7 @@
                          <h5>Process</h5>
                     <select ng-options="branch.id as branch.name for branch in branches"
                             ng-model="selectedBranchId"
-                            ng-change="loadLocations(selectedBranchId)"
+                            ng-click="loadLocations(selectedBranchId)"
                             id="reset">
                       <option value="">Select Process</option>
                     </select>
@@ -60,7 +62,7 @@
                     <select ng-options="location.id as location.name for location in locations | filter: { branchId: selectedBranchId }"
                             ng-model="selectedLocationId"
                             ng-disabled="!selectedBranchId"
-                            ng-change="loadMaterial(selectedLocationId)"
+                            ng-click="loadMaterial(selectedLocationId)"
                             id="reset2">
                       <option value="">Select Material</option>
                     </select>
@@ -94,7 +96,9 @@
                     background-color: #f0ad4e;
                     color: #fff;
                     border-color: #f0ad4e;
+
                 }
+
             </style>
             <table class="table css-serial">
                 <thead style="background-color:#37474f; color: white;">
@@ -129,9 +133,12 @@
                         <span class="btn btn-sm btn-warning btn-style " ng-click="ctrl.quote(record._id)" aria-hidden="true" >Get Quote</span>
                     </td>
                     <td>
-                        <a href="/dashcheckout" ><span class="btn btn-sm btn-warning" ng-click="ctrl.checkout(record._id)" aria-hidden="true" style="    text-transform: uppercase;
-    font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 700; width: 110px; border-radius: 5px">Submit</span></a>
+                        <a href="/dashcheckout" id="submit"><span class="btn btn-sm btn-warning" ng-click="ctrl.checkout(record._id)" aria-hidden="true" style="    text-transform: uppercase;
+                        font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                        font-weight: 700; width: 110px; border-radius: 5px">Submit</span></a>
+                        <!--<a href="/dashcheckout" id="checkstatus" ><span class="btn btn-sm btn-warning" ng-click="ctrl.checkout(record._id)" aria-hidden="true" style="    text-transform: uppercase;
+                        font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                        font-weight: 700; width: 110px; border-radius: 5px">Submit</span></a>-->
                     </td>
                     <td>
                         <!--<span ng-click="ctrl.editRecord(record)" class="glyphicon glyphicon-pencil" aria-hidden="true" style="padding-right: 10px;"></span>-->

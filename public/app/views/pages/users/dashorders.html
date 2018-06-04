@@ -25,7 +25,7 @@
             <th>Sl no.</th>
 			<th ng-repeat="field in ctrl.fields | limitTo:9">{{field.label}}</th>
 			<th>Shipping Address</th>
-			<th>Invoice</th>
+			<th ng-show="main.isLoggedIn && main.authorized">Invoice</th>
 		</tr>
         </thead>
 
@@ -39,7 +39,7 @@
 {{record.scountry}}
 {{record.szip}}
 </pre></td>
-			<td><a href="/invoice" ng-click="ctrl.getinvoicedetails(record._id)">Display invoice</a></td>
+			<td ng-show="main.isLoggedIn && main.authorized"><a href="/invoice" ng-click="ctrl.getinvoicedetails(record._id)">Display invoice</a></td>
 		</tr>
 
     </table>

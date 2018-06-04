@@ -19,7 +19,7 @@ angular.module('dashCtrl',[])
         vm.record = {};
         vm.records = [];
         console.log('record details:');
-        console.log(vm.record);
+        console.log(vm.records);
         
         $scope.branches = [
           { id: 'FDM', name: 'FDM'},
@@ -40,7 +40,7 @@ angular.module('dashCtrl',[])
 
 
         $scope.loadLocations = function(branchId) {
-          console.log('Selected BranchId: ' + branchId);
+          console.log('Selected process: ' + branchId);
           vm.record.process= branchId; 
         }
 
@@ -62,7 +62,6 @@ angular.module('dashCtrl',[])
             $http.post('api/upload',fd,{
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined}
-
             })
             .success(function(d){
                 console.log(d);
@@ -80,6 +79,7 @@ angular.module('dashCtrl',[])
                 console.log(data);
                 $http.get('/api/records', {params: {name: data}}).then(function(response){
                     vm.records = response.data;
+                    console.dir(vm.records[0].review);
                 }, function(response){
                     vm.handleError(response);
                 });
@@ -97,29 +97,23 @@ angular.module('dashCtrl',[])
         vm.getAllRecords();
         
         vm.saveRecord = function() {
-            $('#reset').prop('selectedIndex',0);
-            $('#reset2').prop('selectedIndex',0);
+            $('#reset').val("");
+            $('#reset2').val("");
 
-
-    var fileInput = $('#reset3');
-    var maxSize = 157286400;
-    $('#add-project').click(function(e){
-        if(fileInput.get(0).files.length){
-            var fileSize = fileInput.get(0).files[0].size; // in bytes
-            if(fileSize>maxSize){
-                alert('file size is more then 150MB.\nReduce the resolution while exporting the stl file');
-                return false;
-            }else{
-
-
-                
-            }
-        }else{
-            alert('choose file, please');
-            return false;
-        }
-
-    });
+            var fileInput = $('#reset3');
+            var maxSize = 100000000;
+            
+                if(fileInput.get(0).files.length){
+                    var fileSize = fileInput.get(0).files[0].size; // in bytes
+                    if(fileSize>maxSize){
+                        alert('File size is more then 150MB.\nReduce the resolution while exporting the stl file');
+                        return false;
+                    }
+                }else{
+                    alert('choose file, please');
+                    return false;
+                }
+            
 
             var fd= new FormData()
             angular.forEach($scope.files, function(file){
@@ -176,6 +170,7 @@ angular.module('dashCtrl',[])
 
 
 $(document).ready(function() {
+
 
 });
       

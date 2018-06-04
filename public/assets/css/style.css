@@ -17,7 +17,6 @@ body {
     background-color:   #909090
     background-image: none
     overflow-x: hidden;
-    font-family: "Lato";
 }
 
 .number {
@@ -415,7 +414,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(../images/bomb-cannon-gadget-60671.jpg);
+    background-image: url(../images/bk2.jpg);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
