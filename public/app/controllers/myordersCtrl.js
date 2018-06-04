@@ -4,6 +4,7 @@ angular.module('myordersCtrl',[])
 	
         var vm = this;
         if ($window.location.pathname === '/dashorders') vm.myorders = true;
+        if ($window.location.pathname === '/invoice') vm.invoice = true;
         console.log($window.location.pathname);
         vm.fields = [
             {label: 'Project Title', key: 'projectname'},
@@ -38,8 +39,11 @@ angular.module('myordersCtrl',[])
         }
         vm.getAllRecords();
 
-            //$('div.navbar').hide();
-
+$(document).ready(function() {
+    if ($window.location.pathname === '/invoice'){
+            $('div.navbar').hide();
+            $('#footer').hide();
+        }
             $http.post('api/getinvoicedetails/'+$rootScope.objid).then(function(response){
                 console.log(response.data[0].baddress);
                 $scope.date=response.data[0].date;
@@ -88,6 +92,7 @@ angular.module('myordersCtrl',[])
                 withDecimal($scope.costpostgst);
                 
             })
+        })
 
       
         //decimal to word
