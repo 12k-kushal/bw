@@ -8,13 +8,13 @@ angular.module('checkoutCtrl',[])
     $scope.vm = {};
     $scope.records.objectid=id1;
 
-
-    $scope.getuserdata= function(){
+    //delete this and its api call in api.js
+    /*$scope.getuserdata= function(){
     $http.get('api/getuserdata').then(function(response){
         $scope.phone= response.data[0].phone;
         $scope.firstName=response.data[0].name;
     });
-    }
+    }*/
 
     $scope.vm.SetBilling= function(checked) {  
         console.log(checked);
@@ -49,7 +49,6 @@ angular.module('checkoutCtrl',[])
         review=response.data.review;
         payment=response.data.payment;
 
-        $scope.records.firstname=$scope.firstname;
         $scope.data=response.data;
         $scope.amount1=response.data.fcost;
         $scope.email=response.data.email;
@@ -200,7 +199,7 @@ angular.module('checkoutCtrl',[])
             mm='0'+mm;
         } 
         $scope.records.date = dd+'/'+mm+'/'+yyyy;
-
+        $scope.records.firstname=$scope.firstname;
         console.log($scope.records);
         $http.post('/api/addorders', $scope.records).then(function(response){
                 console.log(response);          

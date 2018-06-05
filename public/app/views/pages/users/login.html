@@ -3,320 +3,18 @@
 <!--<div class="container">-->
 <!--<a href="apps/views/index.html"><img src="assets/images/brahm.png" alt="Brahm Logo" width="50" height="50" align="middle" border="10"><p>Home</a>-->
 
-    <style type="text/css">
-    /*
-=====
-LEVEL 1. RESET STYLES
-=====
-*/
-
-.field{
-  --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #767676);
-}
-
-.field__input{ 
-  background-color: transparent;
-  border-radius: 0;
-  border: none;
-  
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  
-  font-family: inherit;
-  font-size: 1em;
-}
-
-.field__input:focus::-webkit-input-placeholder{
-  color: var(--uiFieldPlaceholderColor);
-}
-
-.field__input:focus::-moz-placeholder{
-  color: var(--uiFieldPlaceholderColor);
-  opacity: 1;
-}
-
-/*
-=====
-LEVEL 2. CORE STYLES
-=====
-*/
-
-.field{
-  display: inline-block;
-}
-
-.field__input{ 
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-/*
-=====
-LEVEL 3. PRESENTATION STYLES
-=====
-*/
-
-/* field_animated */
-
-.field_animated{
-  --uiFieldHeight: var(--fieldHeight, 40px);  
-  --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
-  --uiFieldBorderColor: var(--fieldBorderColor);
-  
-  --uiFieldFontSize: var(--fieldFontSize, 1em);
-  --uiFieldHintFontSize: var(--fieldHintFontSize, 1em);
-
-  --uiFieldPaddingRight: var(--fieldPaddingRight, 15px);
-  --uiFieldPaddingBottom: var(--fieldPaddingBottom, 15px);
-  --uiFieldPaddingLeft: var(--fieldPaddingLeft, 15px);   
- 
-  position: relative;
-  box-sizing: border-box;
-  font-size: var(--uiFieldFontSize);
-  padding-top: 1em;  
-}
-
-.field_animated .field__input{
-  height: var(--uiFieldHeight);
-  padding: 0 var(--uiFieldPaddingRight) 0 var(--uiFieldPaddingLeft);
-  border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColor);  
-}
-
-.field_animated .field__input::-webkit-input-placeholder{
-  opacity: 0;
-  transition: opacity .2s ease-out;
-}
-
-.field_animated .field__input::-moz-placeholder{
-  opacity: 0;
-  transition: opacity .2s ease-out;
-}
-
-.field_animated .field__input:focus{
-  outline: none;
-}
-
-.field_animated .field__input:not(:placeholder-shown) ~ .field__label-wrap .field__label{
-  opacity: 0;
-  bottom: var(--uiFieldPaddingBottom);
-}
-
-.field_animated .field__input:focus::-webkit-input-placeholder{
-  opacity: 1;
-  transition-delay: .2s;
-}
-
-.field_animated .field__input:focus::-moz-placeholder{
-  opacity: 1;
-  transition-delay: .2s;
-}
-
-.field_animated .field__label-wrap{
-  box-sizing: border-box;
-  width: 100%;
-  height: var(--uiFieldHeight); 
-  
-  pointer-events: none;
-  cursor: text;
-
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-.field_animated .field__label{
-  position: absolute;
-  left: var(--uiFieldPaddingLeft);
-  bottom: var(--uiFieldPaddingBottom);
-  
-  line-height: 1;
-  font-size: var(--uiFieldHintFontSize);
-  
-  pointer-events: none;
-  transition: bottom .2s cubic-bezier(0.9,-0.15, 0.1, 1.15), opacity .2s ease-out;
-  will-change: bottom, opacity;
-}
-
-.field_animated .field__input:focus ~ .field__label-wrap .field__label{
-  opacity: 1;
-  bottom: var(--uiFieldHeight);
-}
-
-/* field_a1 */
-
-.field_a1 .field__input{
-  transition: border-color .2s ease-out;
-  will-change: border-color;
-}
-
-.field_a1 .field__input:focus{
-  border-color: var(--fieldBorderColorActive);
-}
-
-/* field_a2 */
-
-.field_a2 .field__label-wrap:after{
-  content: "";
-  box-sizing: border-box;
-  width: 0;
-  height: var(--uiFieldBorderWidth);
-  background-color: var(--fieldBorderColorActive);
-  
-  position: absolute;
-  bottom: 0;
-  left: 0;  
-  
-  will-change: width;
-  transition: width .285s ease-out;
-}
-
-.field_a2 .field__input:focus ~ .field__label-wrap:after{
-  width: 100%;
-}
-
-/* field_a3 */
-
-.field_a3{
-  padding-top: 1.5em;
-}
-
-.field_a3 .field__label-wrap:after{
-  content: "";
-  box-sizing: border-box;
-  width: 100%;
-  height: 0;
-  
-  opacity: 0;
-  border: var(--uiFieldBorderWidth) solid var(--fieldBorderColorActive);
-  
-  position: absolute;
-  bottom: 0;
-  left: 0;
-
-  will-change: opacity, height;
-  transition: height .2s ease-out, opacity .2s ease-out;
-}
-
-.field_a3 .field__input:focus ~ .field__label-wrap:after{
-  height: 100%;
-  opacity: 1;
-}
-
-.field_a3 .field__input:focus ~ .field__label-wrap .field__label{
-  bottom: calc(var(--uiFieldHeight) + .5em);
-}
-
-/*
-=====
-LEVEL 4. SETTINGS
-=====
-*/
-
-.field{
-  --fieldBorderColor: #D1C4E9;
-  --fieldBorderColorActive: #673AB7;
-}
-
-  </style>
-
-    <style type="text/css">
-        .container button {
-    width: 100%;
-    font-size: 1.1rem;
-    padding: 10px;
-    margin: 20px 0px;
-    background-color: rgba(255,255,255,.2);
-    color: white;
-    border: none;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 10px;
-    border-color: white;
-  }
-  .container button:hover {
-    width: 100%;
-    font-size: 1.1rem;
-    padding: 10px;
-    margin: 20px 0px;
-    background-color: rgba(255,255,255,.3);
-    color: white;
-    border: none;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 10px;
-    border-color: white;
-  }
-
-
-  .container .social {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-  }
-  .container .social span {
-    display: inline-block;
-    vertical-align: baseline;
-    padding: 0 20px;
-  }
-  .container .social span:before, .container .social span:after {
-    container: '';
-    display: block;
-    width: 500px;
-    position: absolute;
-    top: 0.9em;
-    border-top: 1px solid White;
-  }
-  .container .social span:before {
-    right: 75%;
-  }
-  .container .social span:after {
-    left: 75%;
-  }
-  .container .buttons {
-    width: 50%;
-    margin: 30px 0px;
-  }
-  .container .buttons button {
-    float: left;
-    width: 30%;
-    margin: 0px 1.5%;
-  }
-  .container .buttons button i {
-    padding-right: 7px;
-  }
-  .container .buttons button.facebook {
-    background-color: #4464B2;
-  }
-  .container .buttons button.twitter {
-    background-color: #28A9E0;
-  }
-  .container .buttons button.google {
-    background-color: #DA4735;
-  }
-  .container .buttons:after {
-    container: "";
-    display: block;
-    clear: both;
-  }
-  .container .already {
-    text-align: center;
-    font-size: 1.5rem;
-  }
-    </style>
-   <div class="container" style="color: black;">
+   <div class="container" style="color: black;margin-top: 60px">
    <br>
 
-        <form name="sentMessage" id="contactForm" ng-submit="main.doLogin(loginData);" class="well form-horizontal form1" novalidate style="background-color: white;">
+        <form name="sentMessage" id="contactForm" ng-submit="main.doLogin(loginData);" class="well form-horizontal form1" novalidate style="background-color: white;max-width: 90%;margin: auto;">
       <fieldset style="background-color: #ffffff;" >
 
-      <center><h2 style="color: #EB7823;"><b>LOGIN</b></h2></center>
+      <center><h2 style="color: #EB7823;"><b>LOGIN</b></h2>
 
-            <center><div class="page">
+  <div class="page">
   <div class="page__content">
     <div class="page__demo">
-      <label class="field field_animated field_a1 page__field">
+      <label class="field field_animated field_a2 page__field">
         
         <input  ng-disabled="main.disabled || facebook.disabled || twitter.disabled || google.disabled" class="field__input" type="text" name="username" placeholder=" " ng-model="main.loginData.username" autocomplete="on" >
         <span class="field__label-wrap">
@@ -333,29 +31,29 @@ LEVEL 4. SETTINGS
       
     </div>
   </div>
-</div></center>
+</div>
   
            <a href="/resetpassword" style="float: right;">Forgot Password?</a>
            </br>
-            <button type="submit" class="btn btn-warning" style="background-color: rgb(102, 102, 102); display:table;margin: 0 auto; width: 50%;">LOGIN<span class="glyphicon glyphicon-send"></span></button>
-           
-      </br>
-            <div class="social"> <span>or sign up with social media</span></div>
-            <div class="buttons">
-                <a href="#" ng-disabled="facebook.disabled || twitter.disabled || google.disabled" ng-click="main.facebook();"> <button class="facebook"><i class="fa fa-facebook"></i>Facebook</button> </a>
-                <a href="#" ng-disabled="facebook.disabled || twitter.disabled || google.disabled" ng-click="main.twitter();"> <button class="twitter"><i class="fa fa-twitter"></i>Twitter</button> </a>
-               
-            </div>
-</br>
-                <div class="already">Dont have an account? <a href="/register">Sign up</a></div>      
+            <button type="submit" class="btn btn-warning btn-lg" style=" background-color: #eb7823;
+    border-color: #eb7823; width: 250px;height: 43px;border-radius: 7px;">SIGN IN</button>
+         
 
+          <hr class="hr-text" data-content="OR">
+            <div class="social"> <span>Sign up with social media</span></div>
+            <div class="buttons">
+                <a href="#" ng-disabled="facebook.disabled || twitter.disabled || google.disabled" ng-click="main.facebook();"> <button class="button1 facebook"><i class="fa fa-facebook"></i>Facebook</button> </a>
+                <a href="#" ng-disabled="facebook.disabled || twitter.disabled || google.disabled" ng-click="main.twitter();"> <button class="button1 twitter"><i class="fa fa-twitter"></i>Twitter</button> </a>
+            </div>
+
+                <div class="already">Dont have an account? <a href="/register">Sign up</a></div>      
+ </center>  
                                        
       </fieldset>
 </form>
 </div>
     </div>
-
-               <!--  Loading Icon (Bootstrap) -->
+    <!--  Loading Icon (Bootstrap) -->
          <div class="jumbotron text-center" ng-show="main.loading">
             <span class="glyphicon glyphicon-repeat spinner"></span>
             <p>Loading....</p>

@@ -1636,6 +1636,7 @@ module.exports = function(router) {
         ord.bcountry=req.body.bcountry;
         ord.bzip=req.body.bzip;
         ord.firstname=req.body.firstname;
+        ord.phonenumber=req.body.phonenumber;
         ord.saddress=req.body.sstreet;
         ord.scity=req.body.scity;
         ord.sstate=req.body.sstate;

@@ -230,7 +230,10 @@
             <h3><b>Billing Address</b></h3>
             <!--<input type="hidden" name="firstname" value="{{firstName}}" />-->
             <label for="user"><i class="fa fa-user"></i> Name</label>
-            <input type="text" id="user" placeholder="Name" name="firstname" ng-model="firstname" required="true" value="{{firstname}}">
+            <input type="text" id="user" placeholder="Name" name="firstname" ng-model="firstname" required="true" value="{{records.firstname}}">
+
+            <label for="phonenumber"><i class="fa fa-phone"></i> Phone Number</label>
+            <input type="text" id="phonenumber" placeholder="Phone" name="phonenumber" ng-model="records.phonenumber" required="true" value="{{records.phonenumber}}">
 
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
             <input type="text" id="adr" placeholder="Address" name="address1" ng-model="records.bstreet" required="true" value="{{records.bstreet}}">

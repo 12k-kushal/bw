@@ -1,15 +1,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<body id="demo">
+<body id="demo" >
      <link rel="stylesheet" href="assets/css/register.css">
 <!--<div class="content">-->
 <!--<a href="apps/views/index.html"><img src="assets/images/brahm.png" alt="Brahm Logo" width="50" height="50" align="middle" border="10"><p>Home</a>-->
     
-   <div class="container">
+   <div class="container" style="margin-top: 60px;">
    <br>
 
-      <form style="background-color: #ffffff ;" name="regForm" ng-submit="register.regUser(regData, regForm.$valid, confirmed);" class="well form-horizontal form1" id="contactForm" novalidate>
+      <form style="background-color: #ffffff ;max-width: 90%;margin: auto;"" name="regForm" ng-submit="register.regUser(regData, regForm.$valid, confirmed);" class="well form-horizontal form1" id="contactForm" novalidate>
    <fieldset style="background-color: #ffffff;" >
 
     <legend style="background-color: #ffffff"><center><h2 style="color: #EB7823;"><b>Registration Form</b></h2></center></legend>
@@ -162,12 +162,12 @@
 
               <div class="clearfix"></div>
                         
-                            <div id="success" ></div>
-                            <div style="text-align: center;">
-                            <button type="submit"  class="btn btn-xl">SUBMIT<span class="glyphicon glyphicon-send"></span></button> </div><br/>
-                           <div class="already" align="middle" style="color: black;""> Already Registered? <a style="color: black;" href="/login">Sign in</a></div></span>
-                            <!-- Login Button 
-                           -->
+                <div id="success" ></div>
+                <div style="text-align: center;">
+                <button type="submit" class="btn btn-warning btn-lg" style=" background-color: #eb7823;border-color: #eb7823; width: 250px;height: 43px;
+    border-radius: 7px; margin-top: 8px;border-radius: 8px;">SUBMIT<span class="glyphicon glyphicon-send"></span></button> </div><br/>
+                <div class="already" align="middle" style="color: black;""> Already Registered? <a style="color: black;" href="/login">Sign in</a></div></span>
+                <!-- Login Button-->
                                        
       </fieldset>
 </form>

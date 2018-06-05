@@ -1,6 +1,6 @@
 angular.module('dashCtrl',[])
 
-    .controller('dashCtrl',['$scope','$http','$rootScope',function($scope,$http,$rootScope){
+    .controller('dashCtrl',['$scope','$http','$rootScope','$window',function($scope,$http,$rootScope,$window){
 
         var vm = this;
         vm.fields = [
@@ -166,7 +166,10 @@ angular.module('dashCtrl',[])
         }
 
 
-        var videoPlayButton, videoWrapper = document.getElementsByClassName('video-wrapper')[0],
+    
+if ($window.location.pathname === '/dashworkflow') 
+{
+    var videoPlayButton, videoWrapper = document.getElementsByClassName('video-wrapper')[0],
     video = document.getElementsByTagName('video')[0],
     videoMethods = {
         renderVideoPlayButton: function() {
@@ -196,9 +199,7 @@ angular.module('dashCtrl',[])
     }
 
     videoMethods.renderVideoPlayButton()
-
-
-
+}
       
     }
 

@@ -49,6 +49,7 @@ $(document).ready(function() {
                 $scope.date=response.data[0].date;
                 $scope.projectname=response.data[0].projectname;
                 $scope.firstname=response.data[0].firstname;
+                $scope.phonenumber=response.data[0].phonenumber;
 
                 $scope.baddress=response.data[0].baddress;
                 $scope.bcity=response.data[0].bcity;
