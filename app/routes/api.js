@@ -35,7 +35,7 @@ module.exports = function(router) {
 
     //Generate Hash for payumoney
     router.post('/createHash', function (req, res) {
-        var salt = 'qsjtako0im';
+        var salt = 'perqkBd267';
         var hash = sha512(req.body.preHashString + salt);
         console.log(hash);
         res.send({success : true, hash: hash});
@@ -111,8 +111,8 @@ module.exports = function(router) {
                         from: 'Fabtiv staff, kushal@brahm.works',
                         to: [user.email, ''],
                         subject: 'Your Activation Link',
-                        text: 'Hello ' + user.name + ', thank you for registering at Fabtiv. Please click on the following link to complete your activation: https://peaceful-journey-32238.herokuapp.com/activate/' + user.temporarytoken,
-                        html: 'Hello<strong> ' + user.name + '</strong>,<br><br>Thank you for registering at fabtiv.com. Please click on the link below to complete your activation:<br><br><a href="https://peaceful-journey-32238.herokuapp.com/activate/' + user.temporarytoken + '">https://peaceful-journey-32238.herokuapp.com/activate/</a>'
+                        text: 'Hello ' + user.name + ', thank you for registering at Fabtiv. Please click on the following link to complete your activation: https://fabtiv.com/activate/' + user.temporarytoken,
+                        html: 'Hello<strong> ' + user.name + '</strong>,<br><br>Thank you for registering at fabtiv.com. Please click on the link below to complete your activation:<br><br><a href="https://fabtiv.com/activate/' + user.temporarytoken + '">https://fabtiv.com/activate/</a>'
                     };
                     // Function to send e-mail to the user
                     client.sendMail(email, function(err, info) {
@@ -134,7 +134,7 @@ module.exports = function(router) {
         // setup email data with unicode symbols
         var email = {
             from: '"ADMIN", kushal@brahm.works', // sender address
-            to: ['k1u2s3h4a5l6@gmail.com', ''],// list of receivers
+            to: ['sanjay@brahm.works', ''],// list of receivers
             subject: req.body.subject, // Subject line
             html: `<p>You have a new contact request from fabtiv.com</p>
                 <h3> Contact details</h3>
@@ -416,8 +416,8 @@ module.exports = function(router) {
                             from: 'Fabtiv staff, kushal@brahm.works',
                             to: user.email,
                             subject: 'Activation Link Request',
-                            text: 'Hello ' + user.name + ', You recently requested a new account activation link. Please click on the following link to complete your activation: https://peaceful-journey-32238.herokuapp.com/activate/' + user.temporarytoken,
-                            html: 'Hello<strong> ' + user.name + '</strong>,<br><br>You recently requested a new account activation link. Please click on the link below to complete your activation:<br><br><a href="https://peaceful-journey-32238.herokuapp.com/activate/' + user.temporarytoken + '">https://peaceful-journey-32238.herokuapp.com/activate/</a>'
+                            text: 'Hello ' + user.name + ', You recently requested a new account activation link. Please click on the following link to complete your activation: https://fabtiv.com/activate/' + user.temporarytoken,
+                            html: 'Hello<strong> ' + user.name + '</strong>,<br><br>You recently requested a new account activation link. Please click on the link below to complete your activation:<br><br><a href="https://fabtiv.com/activate/' + user.temporarytoken + '">https://fabtiv.com/activate/</a>'
                         };
                         // Function to send e-mail to user
                         client.sendMail(email, function(err, info) {
@@ -501,8 +501,8 @@ module.exports = function(router) {
                                 from: 'Fabtiv staff, kushal@brahm.works',
                                 to: user.email,
                                 subject: 'Reset Password Request',
-                                text: 'Hello ' + user.name + ', You recently request a password reset link. Please click on the link below to reset your password:<br><br><a href="https://peaceful-journey-32238.herokuapp.com/reset/' + user.resettoken,
-                                html: 'Hello<strong> ' + user.name + '</strong>,<br><br>You recently request a password reset link. Please click on the link below to reset your password:<br><br><a href="https://peaceful-journey-32238.herokuapp.com/reset/' + user.resettoken + '">https://peaceful-journey-32238.herokuapp.com/reset/</a>'
+                                text: 'Hello ' + user.name + ', You recently request a password reset link. Please click on the link below to reset your password:<br><br><a href="https://fabtiv.com/reset/' + user.resettoken,
+                                html: 'Hello<strong> ' + user.name + '</strong>,<br><br>You recently request a password reset link. Please click on the link below to reset your password:<br><br><a href="https://fabtiv.com/reset/' + user.resettoken + '">https://fabtiv.com/reset/</a>'
                             };
                             // Function to send e-mail to the user
                             client.sendMail(email, function(err, info) {
@@ -599,8 +599,8 @@ module.exports = function(router) {
                                 from: 'Fabtiv staff, kushal@brahm.works',
                                 to: user.email,
                                 subject: 'Password Recently Reset',
-                                text: 'Hello ' + user.name + ', This e-mail is to notify you that your password was recently reset at https://peaceful-journey-32238.herokuapp.com',
-                                html: 'Hello<strong> ' + user.name + '</strong>,<br><br>This e-mail is to notify you that your password was recently reset at https://peaceful-journey-32238.herokuapp.com'
+                                text: 'Hello ' + user.name + ', This e-mail is to notify you that your password was recently reset at https://fabtiv.com',
+                                html: 'Hello<strong> ' + user.name + '</strong>,<br><br>This e-mail is to notify you that your password was recently reset at https://fabtiv.com'
                             };
                             // Function to send e-mail to the user
                             client.sendMail(email, function(err, info) {
@@ -1526,7 +1526,7 @@ module.exports = function(router) {
                    
                     var email = {
                         from: 'Fabtiv staff, kushal@brahm.works',
-                        to: ['k1u2s3h4a5l6@gmail.com', ''],
+                        to: ['sanjay@brahm.works', ''],
                         subject: '[BW] There is a project under review',
                         html: `<p>You have a new project for review</p>
                                 <h3> Details:</h3>
@@ -1598,20 +1598,6 @@ module.exports = function(router) {
                 res.send('1 ROW AFFECTED');
         }
     }    
-    });
-
-    //get data from USER db using emailid
-    router.get('/getuserdata', function(req, res, next) {
-        console.log("demo");
-        console.log(req.decoded.email);
-        User.find({email : req.decoded.email})
-        .exec(function(err, data){
-            if(err){
-                res.json(err)
-            } else {
-                res.json(data)
-            }
-        });
     });
 
     //add records to order db

@@ -69,7 +69,7 @@
                         <pre>Final cost : {{data.fcost}}</pre>
                         <pre>Comment : {{data.comment}}</pre>
                     </div>
-                <button id="activate-step-3" class="btn btn-primary btn-lg invisible" ng-click="getuserdata();" > Proceed to Pay</button>
+                <button id="activate-step-3" class="btn btn-primary btn-lg invisible"> Proceed to Pay</button>
             </div>
         </div>
     </div>
@@ -211,7 +211,7 @@
 <div class="row1">
   <div class="col-50">
     <div class="container1">
-      <form  class="form-horizontal" id="paymentForm"  action='https://sandboxsecure.payu.in/_payment' method='post' style="align-items: center;"><!--secure.payu.in/_payment -->
+      <form  class="form-horizontal" id="paymentForm"  action='https://secure.payu.in/_payment' method='post' style="align-items: center;"><!--secure.payu.in/_payment -->
 
         <input type="hidden" name="key" value="{{mkey}}" />
         <input type="hidden" name="txnid" value="{{txnid}}" />
@@ -220,8 +220,8 @@
         
         <input type="hidden" name="email" value="{{records.email}}" />
         <input type="hidden" name="phone" value="{{phone}}" />
-        <input type="hidden" name="surl" value="http://peaceful-journey-32238.herokuapp.com/api/PaymentStatus" /><!--http://localhost:8080/api/PaymentStatus-->
-        <input type="hidden" name="furl" value="http://peaceful-journey-32238.herokuapp.com/api/PaymentStatus" />
+        <input type="hidden" name="surl" value="http://fabtiv.com/api/PaymentStatus" /><!--http://localhost:8080/api/PaymentStatus-->
+        <input type="hidden" name="furl" value="http://fabtiv.com/api/PaymentStatus" />
         <input type="hidden" name="hash" id="hash" value="{{hash}}">
         <input type="hidden" name="service_provider" value="{{service_provider}}">
         
@@ -261,17 +261,6 @@
             <input type="hidden" name="udf1" value="{{id}}">
 
           </div>
-
-         <!-- <div class="col-50">
-           <h3>Payment</h3>
-            <label for="fname">Accepted Cards</label>
-            <div class="icon-container1">
-              <i class="fa fa-cc-visa" style="color:navy;"></i>
-              <i class="fa fa-cc-amex" style="color:blue;"></i>
-              <i class="fa fa-cc-mastercard" style="color:red;"></i>
-              <i class="fa fa-cc-discover" style="color:orange;"></i>
-            </div> 
-          </div>-->
           
         </div>
 

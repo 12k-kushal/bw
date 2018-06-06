@@ -8,39 +8,23 @@ angular.module('checkoutCtrl',[])
     $scope.vm = {};
     $scope.records.objectid=id1;
 
-    //delete this and its api call in api.js
-    /*$scope.getuserdata= function(){
-    $http.get('api/getuserdata').then(function(response){
-        $scope.phone= response.data[0].phone;
-        $scope.firstName=response.data[0].name;
-    });
-    }*/
-
     $scope.vm.SetBilling= function(checked) {  
-        console.log(checked);
-
-          if (checked==true) { 
-                    $('#TESTING').replaceWith('#TESTING1'); 
-                    $scope.records.sstreet = document.getElementById('adr').value;   
-                    $scope.records.scity = document.getElementById('city').value;   
-                    $scope.records.sstate = document.getElementById('state').value;   
-                    $scope.records.szip = +document.getElementById('zip').value;
-                    $scope.records.scountry = document.getElementById('country').value;
-                    //$scope.records.fname = document.getElementById('gst').value;
-
-          } else {  
-                    //document.getElementById('suser').value = '';   
-                    $scope.records.sstreet="";  
-                    $scope.records.scity= "";   
-                    $scope.records.sstate= "";   
-                    $scope.records.szip= "";   
-                    $scope.records.scountry= ""; 
-                    //document.getElementById('sgst').value = ''; 
-          }  
+    console.log(checked);
+    if (checked==true) { 
+        $('#TESTING').replaceWith('#TESTING1'); 
+        $scope.records.sstreet = document.getElementById('adr').value;   
+        $scope.records.scity = document.getElementById('city').value;   
+        $scope.records.sstate = document.getElementById('state').value;   
+        $scope.records.szip = +document.getElementById('zip').value;
+        $scope.records.scountry = document.getElementById('country').value;
+        } else {  
+        $scope.records.sstreet="";  
+        $scope.records.scity= "";   
+        $scope.records.sstate= "";   
+        $scope.records.szip= "";   
+        $scope.records.scountry= ""; 
+        }  
     }  
-
-
-
 
     $http.post('api/checkoutrecord/'+id1).then(function(response){
         console.log(response.data);
@@ -73,15 +57,13 @@ angular.module('checkoutCtrl',[])
         }
 
         $(document).ready(function() {
-           /*document.getElementById('vs_iframe').onload=function()
-{   
-    //... your code here ...
-    document.getElementById('vs_iframe').contentWindow.postMessage({msg_type:'load', url:'http://localhost:8080/abc.stl'}, '*');
+           /*STL VIEWER 
+            document.getElementById('vs_iframe').onload=function()
+            {   
+            //... your code here ...
+             document.getElementById('vs_iframe').contentWindow.postMessage({msg_type:'load', url:'http://localhost:8080/abc.stl'}, '*');
 
-}*/
-           
-
-
+            }*/
             var navListItems = $('ul.setup-panel li a'),
             allWells = $('.setup-content');
             allWells.hide();
@@ -126,47 +108,26 @@ angular.module('checkoutCtrl',[])
 
 
                 
-            });
         });
+    });
 
-/*
-    document.getElementById('vs_iframe').onload=function(){   
-    
-        function load_local_file(f)
-        {   console.log(f);
-            document.getElementById('vs_iframe').contentWindow.postMessage({msg_type:'load', file:f}, '*');
-        }
-
+    $scope.review = function() {
+        $http.put('/api/review/'+id1).then(function(response){
+            console.log(response);
+        },function(response){
+            console.log(response);
+        });
     }
 
-    $http.get('/api/getfile', {params: {filename: fname}}).then(function(response){
-                    console.log(response);
-                    console.log(file);
-                        document.getElementById('vs_iframe').contentWindow.postMessage({msg_type:'load', file:response}, '*');
-                    
-                    
-                }, function(response){
-                    console.log(response);
-                });*/
-        $scope.review = function() {
-            $http.put('/api/review/'+id1).then(function(response){
-                console.log(response);
-            }, function(response){
-                console.log(response);
-            });
-        }
-    
-
-    function makeid() {
+    function makeid(){
         var text = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
         for (var i = 0; i < 5; i++)
             text += possible.charAt(Math.floor(Math.random() * possible.length));
         return text;
     }
 
-    $scope.mkey = 'qhi9iUTQ';
+    $scope.mkey = 'QZ3qSDSW';
     $scope.productInfo = 'Verification order';
     $scope.service_provider = 'payu_paisa';
     $scope.txnid = makeid();

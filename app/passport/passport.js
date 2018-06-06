@@ -40,7 +40,7 @@ module.exports = function(app, passport) {
     passport.use(new FacebookStrategy({
             clientID: '913503842191679', // Replace with your Facebook Developer App client ID
             clientSecret: '603ded7ee8a0a753ec41af2e23295a65', // Replace with your Facebook Developer client secret
-            callbackURL: "https://peaceful-journey-32238.herokuapp.com/auth/facebook/callback", // Replace with your Facebook Developer App callback URL
+            callbackURL: "https://fabtiv.com/auth/facebook/callback", // Replace with your Facebook Developer App callback URL
             profileFields: ['id', 'displayName', 'photos', 'email']
         },
         function(accessToken, refreshToken, profile, done) {
@@ -60,7 +60,7 @@ module.exports = function(app, passport) {
     passport.use(new TwitterStrategy({
             consumerKey: 'N7HzOEAJdjjYr8OTuhoChjyit', // Replace with your Twitter Developer App consumer key
             consumerSecret: '5jc3h5p8JcmFAlCQx65iqjzgjZrVNUbl2yIx1J89qsRcxgTECS', // Replace with your Twitter Developer App consumer secret
-            callbackURL: "https://peaceful-journey-32238.herokuapp.com/auth/twitter/callback", // Replace with your Twitter Developer App callback URL
+            callbackURL: "https://fabtiv.com/auth/twitter/callback", // Replace with your Twitter Developer App callback URL
             userProfileURL: "https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true"
         },
         function(token, tokenSecret, profile, done) {
@@ -85,7 +85,7 @@ module.exports = function(app, passport) {
             }
         }
     ));
-
+/*
     // Google Strategy  
     passport.use(new GoogleStrategy({
             clientID: '852222686887-ld3cnfu1g76lpi0bgrmpbr37css6c3o0.apps.googleusercontent.com', // Replace with your Google Developer App client ID
@@ -109,7 +109,7 @@ module.exports = function(app, passport) {
     app.get('/auth/google', passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login', 'profile', 'email'] }));
     app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/googleerror' }), function(req, res) {
         res.redirect('/google/' + token); // Redirect user with newly assigned token
-    });
+    });*/
 
     // Twitter Routes
     app.get('/auth/twitter', passport.authenticate('twitter'));
