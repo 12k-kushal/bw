@@ -117,8 +117,8 @@ module.exports = function(router) {
                         from: 'Fabtiv staff, accounts@brahm.works',
                         to: [user.email, ''],
                         subject: 'Your Activation Link',
-                        text: 'Hello ' + user.name + ', thank you for registering at Fabtiv. Please click on the following link to complete your activation: https://fabtiv.com/activate/' + user.temporarytoken,
-                        html: 'Hello<strong> ' + user.name + '</strong>,<br><br>Thank you for registering at fabtiv.com. Please click on the link below to complete your activation:<br><br><a href="https://fabtiv.com/activate/' + user.temporarytoken + '">https://fabtiv.com/activate/</a>'
+                        text: 'Hello ' + user.name + ', thank you for registering at Fabtiv. Please click on the following link to complete your activation: http://fabtiv.com/activate/' + user.temporarytoken,
+                        html: 'Hello<strong> ' + user.name + '</strong>,<br><br>Thank you for registering at fabtiv.com. Please click on the link below to complete your activation:<br><br><a href="http://fabtiv.com/activate/' + user.temporarytoken + '">http://fabtiv.com/activate/</a>'
                     };
                     // Function to send e-mail to the user
                     client.sendMail(email, function(err, info) {
@@ -422,8 +422,8 @@ module.exports = function(router) {
                             from: 'Fabtiv staff, accounts@brahm.works',
                             to: user.email,
                             subject: 'Activation Link Request',
-                            text: 'Hello ' + user.name + ', You recently requested a new account activation link. Please click on the following link to complete your activation: https://fabtiv.com/activate/' + user.temporarytoken,
-                            html: 'Hello<strong> ' + user.name + '</strong>,<br><br>You recently requested a new account activation link. Please click on the link below to complete your activation:<br><br><a href="https://fabtiv.com/activate/' + user.temporarytoken + '">https://fabtiv.com/activate/</a>'
+                            text: 'Hello ' + user.name + ', You recently requested a new account activation link. Please click on the following link to complete your activation: http://fabtiv.com/activate/' + user.temporarytoken,
+                            html: 'Hello<strong> ' + user.name + '</strong>,<br><br>You recently requested a new account activation link. Please click on the link below to complete your activation:<br><br><a href="http://fabtiv.com/activate/' + user.temporarytoken + '">http://fabtiv.com/activate/</a>'
                         };
                         // Function to send e-mail to user
                         client.sendMail(email, function(err, info) {
@@ -507,8 +507,8 @@ module.exports = function(router) {
                                 from: 'Fabtiv staff, accounts@brahm.works',
                                 to: user.email,
                                 subject: 'Reset Password Request',
-                                text: 'Hello ' + user.name + ', You recently request a password reset link. Please click on the link below to reset your password:<br><br><a href="https://fabtiv.com/reset/' + user.resettoken,
-                                html: 'Hello<strong> ' + user.name + '</strong>,<br><br>You recently request a password reset link. Please click on the link below to reset your password:<br><br><a href="https://fabtiv.com/reset/' + user.resettoken + '">https://fabtiv.com/reset/</a>'
+                                text: 'Hello ' + user.name + ', You recently request a password reset link. Please click on the link below to reset your password:<br><br><a href="http://fabtiv.com/reset/' + user.resettoken,
+                                html: 'Hello<strong> ' + user.name + '</strong>,<br><br>You recently request a password reset link. Please click on the link below to reset your password:<br><br><a href="http://fabtiv.com/reset/' + user.resettoken + '">http://fabtiv.com/reset/</a>'
                             };
                             // Function to send e-mail to the user
                             client.sendMail(email, function(err, info) {
@@ -605,8 +605,8 @@ module.exports = function(router) {
                                 from: 'Fabtiv staff, accounts@brahm.works',
                                 to: user.email,
                                 subject: 'Password Recently Reset',
-                                text: 'Hello ' + user.name + ', This e-mail is to notify you that your password was recently reset at https://fabtiv.com',
-                                html: 'Hello<strong> ' + user.name + '</strong>,<br><br>This e-mail is to notify you that your password was recently reset at https://fabtiv.com'
+                                text: 'Hello ' + user.name + ', This e-mail is to notify you that your password was recently reset at http://fabtiv.com',
+                                html: 'Hello<strong> ' + user.name + '</strong>,<br><br>This e-mail is to notify you that your password was recently reset at http://fabtiv.com'
                             };
                             // Function to send e-mail to the user
                             client.sendMail(email, function(err, info) {
@@ -1432,7 +1432,7 @@ module.exports = function(router) {
         }
 
         // parsing an STL Binary File
-        // (borrowed some code from here: https://github.com/mrdoob/three.js/blob/master/examples/js/loaders/STLLoader.js)
+        // (borrowed some code from here: http://github.com/mrdoob/three.js/blob/master/examples/js/loaders/STLLoader.js)
         function _parseSTLBinary (buf) {
             buf = _toArrayBuffer(buf);
 
