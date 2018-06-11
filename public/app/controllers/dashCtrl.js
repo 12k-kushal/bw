@@ -95,10 +95,7 @@ angular.module('dashCtrl',[])
         vm.getAllRecords();
         
         vm.saveRecord = function() {
-            $('#reset').val("");
-            $('#reset2').val("");
-
-            var fileInput = $('#reset3');
+           /* var fileInput = $('#reset3');
             var maxSize = 100000000;
             
                 if(fileInput.get(0).files.length){
@@ -111,7 +108,7 @@ angular.module('dashCtrl',[])
                     alert('choose file, please');
                     return false;
                 }
-            
+            */
 
             var fd= new FormData()
             angular.forEach($scope.files, function(file){
