@@ -137,7 +137,7 @@
                 text-decoration: none;
             }
             </style>
-            <li><a href="/dashworkflow" style="font-size: 16px;">WORKFLOW</a></li>
+            <li><a href="/dashworkflow" style="font-size: 16px;">HOW IT WORKS</a></li>
             <li><a ng-show="!main.isLoggedIn" href="/login" style="font-size: 16px;">LOGIN</a></li>
             <li><a ng-show="!main.isLoggedIn" href="/register" style="font-size: 16px;">REGISTER</a></li>  
             <li><a ng-show="main.isLoggedIn" href="/dashmyprojects" style="font-size: 16px;">PROJECTS</a></li>
@@ -260,7 +260,7 @@
                 <div class="col-sm-3" style="background-color:#ffffff;">
                     <div class="thumbnail">
                     <img class="img-responsive" src="assets/images/safe_image-9.jpg" alt="img-1">
-                    <p class="img_head">
+                    <p class="img_head" style="padding: 20px 0px;">
                     Prototyping Services</p>
                     </div>
                     <p style="text-align:center;">We provide 3D Printing , Laser Cutting, Sheet Metal and various other fabrication process.</p><br/><br/>
@@ -268,7 +268,7 @@
                 <div class="col-sm-3" style="background-color:#ffffff;">
                     <div class="thumbnail">
                     <img class="img-responsive" src="assets/images/safe_image-2.jpg" alt="img-1">
-                    <p class="img_head">
+                    <p class="img_head" style="padding: 20px 0px;">
                     PCB Design Services
                     </p>
                     </div>
@@ -277,7 +277,7 @@
                 <div class="col-sm-3" style="background-color:#ffffff;">
                     <div class="thumbnail">
                     <img class="img-responsive" src="assets/images/safe_image-13.jpg" alt="img-1">
-                    <p class="img_head">
+                    <p class="img_head" style="padding: 20px 0px;">
                     Mechanical Design Services
                     </p>
                     </div>
@@ -287,7 +287,7 @@
                     <div class="thumbnail">
                     <img class="img-responsive" src="assets/images/safe_image-7.jpg" alt="img-1">
                     <p class="img_head">
-                    Regulatory and Environmental Compliance
+                    Regulatory & Environmental Compliance
                     </p>
                     </div>
                     <p style="text-align:center;">We provide a host of solutions that enable customers to meet their regulatory compliance obligations – be it for RoHS, CE, FCC or any other major legislation.</p><br/>
@@ -317,7 +317,7 @@
                 <div class="col-sm-3 col-xs-6">
                     <div class="number">
                         <i class="glyphicon glyphicon-heart-empty"></i>
-                        <h3 class="white-text"><span class="counter">1500</span></h3>
+                        <h3 class="white-text"><span class="counter">1220</span></h3>
                         <span class="white-text">3D Printing Orders</span>
                     </div>
                 </div>
@@ -327,7 +327,7 @@
                 <div class="col-sm-3 col-xs-6">
                     <div class="number">
                         <i class="glyphicon glyphicon-send"></i>
-                        <h3 class="white-text"><span class="counter">400</span></h3>
+                        <h3 class="white-text"><span class="counter">273</span></h3>
                         <span class="white-text">Completed projects</span>
                     </div>
                 </div>
@@ -347,7 +347,7 @@
                 <div class="col-sm-3 col-xs-6">
                     <div class="number">
                         <i class="glyphicon glyphicon-file"></i>
-                        <h3 class="white-text"><span class="counter">70</span></h3>
+                        <h3 class="white-text"><span class="counter">60</span></h3>
                         <span class="white-text">Total Years of Experience</span>
                     </div>
                 </div>
@@ -449,16 +449,15 @@
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">About Us</h2>
                     <br>
-                    <h4>India's First Maker Ship were Mentors become Makers along with Hardware Entrepreneurs</h4>
+                    <h4>"We are the manufacturer that supports innovation"</h4>
                     </br></br>
                     <div class="container">
                       <div class="row">
                         <div class="col-sm-6">
                         
                         <p style=" text-justify: inter-word; font-style: italic; font-size: 16px">
-                         An exclusive Makership from Brahm.Works which incubates only Hardware startups aims to achieve along with our “Make in India” campaign to make India a leader in manufacturing by 2030. Our Makership program provides an opportunity for hardware startups in various parts of the world to be part of this revolution.
+                         Brahm works is a product design and manufacturing team that is dedicated to providing design and manufacturing solution for hardware startups and small businesses. We offer the most competitive, economical and quality products by prototyping, design and manufacturing solutions with our experienced engineering team, project management skills and extended strategic vendors. Over the past couple of years Brahm Works has worked as a manufacturer providing quality products for Fortune 500 companies. Based in the heart of the electronics and molding world, with extensive resource and connections in the industry, we have delivered world-class products and services to companies worldwide.
 
-                         Having worked with more than 100 startups this new incubator model provides up to 10 Lakh rupees worth of credit to our selected startups. These credits can be later redeemed to be used in various services we provide. Having a collective experience of more than 100 years and being worked in Bay area in San Fransisco to shenzhen we provide Design, Innovation and Manufacturing capabilities to our selected startups. Our panel members does not consists of Mentors, It consists of Makers who can provide startups with services from Pixels to Patents.
                          </p>
                         </div>
                         <div class="col-sm-6" align="right">
@@ -623,8 +622,8 @@
 
 
     <!--Location and contact-->
-    <section ng-show="main.home"  class="bg-light-gray" >
-        <div class="container" id="location">
+    <section ng-show="main.home"  class="bg-light-gray" id="location">
+        <div class="container" >
             <div class="row">
                 <div class="col-lg-6" style="margin-bottom: 20px;">
                     <h2 class="section-heading">Location</h2>
@@ -772,9 +771,9 @@
                 <div class="col-xs-12 col-sm-4 col-md-4" >
                     <h5 style="text-align: left; font-size: 17px"> <img src="assets/images/brahm.png" style="height: 40px; width: 30px; padding-bottom: 10px;"> Fabtiv</br>Design . Manufacture . Innovation</h5>
                   
-                    <p>#8 Nagavara Village, Kasaba Hobli, 5th Block  </p>
-                    <p>Ashwath Nagar, HBR layout </p>
-                    <p>Bangalore, Karnataka - 560045</p> 
+                    <p>#108/2, 3rd Cross, 4th Main Road,</p>
+                    <p>Horamavu Main Rd, Munireddy Layout,</p>
+                    <p>Bengaluru, Karnataka 560043</p> 
                 </br>
                 <p>+91 9902831848</p>
                 <p>sanjay@brahm.works</p>
@@ -783,11 +782,12 @@
                 <div class="col-xs-12 col-sm-4 col-md-4"  style="padding-left:125px;">
                     <h5 style="text-align: left; font-size: 17px">Company</h5>
                     <ul class="list-unstyled quick-links" style="text-align: left;">
-                        <li><a href="#"><i class="fa fa-angle-double-right"></i>Home</a></li>
-                        <li><a href="#services"><i class="fa fa-angle-double-right"></i>Services</a></li>
-                        <li><a href="#about"><i class="fa fa-angle-double-right"></i>About</a></li>
-                        <li><a href="#contact"><i class="fa fa-angle-double-right"></i>Contact</a></li>
-                        <li><a href="#location"><i class="fa fa-angle-double-right"></i>Location</a></li>
+                        <li><a href="app/views/pages/index.html#" target="_top"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                        <li><a href="app/views/pages/index.html#services"><i class="fa fa-angle-double-right"></i>Services</a></li>
+                        <li><a href="app/views/pages/index.html#about"><i class="fa fa-angle-double-right" ></i>About</a></li>
+                        <li><a href="app/views/pages/index.html#location"><i class="fa fa-angle-double-right"></i>Contact</a></li>
+                        <li><a href="app/views/pages/index.html#location"><i class="fa fa-angle-double-right"></i>Location</a></li>
+                        <li><a href="/dashworkflow" target="_top"><i class="fa fa-angle-double-right"></i>How it works</a></li>
                     </ul>
                 </div>
                 <div class="col-xs-12 col-sm-4 col-md-4" style="padding-left:125px;">
@@ -803,7 +803,7 @@
                 </div>
             </div>
             </br></br></br>
-            <h6 ng-show="!main.isLoggedIn" style="text-align: center; color: #fff;">Click here to get an instant quote.&nbsp&nbsp<a href="/login" class="page-scroll btn btn-lg btn-transparent" style="width: 160px;margin-top: 3px;">Get Quote</a></h6>
+            <h6 ng-show="!main.isLoggedIn" style="text-align: center; color: #fff;">Click here to get an instant quote.&nbsp&nbsp<a href="/login" target="_top" class="page-scroll btn btn-lg btn-transparent" style="width: 160px;margin-top: 3px;">Get Quote</a></h6>
         </br>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">

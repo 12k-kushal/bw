@@ -236,6 +236,7 @@ angular.module('mainController', ['authServices', 'userServices'])
                     app.successMsg = false; // CLear success message
                     app.disabled = false; // Enable form on submission
                     app.checkSession(); // Activate checking of session
+                    hideModal();
                 }, 2000);
             } else {
                 // Check if the user's account is expired

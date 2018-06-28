@@ -244,10 +244,9 @@ LEVEL 4. SETTINGS
   </div>
 </div>
   
-           <a href="/resetpassword" style="float: right;">Forgot Password?</a>
-           </br>
-            <button type="submit" class="btn btn-warning btn-lg" style=" background-color: #eb7823;
-    border-color: #eb7823; width: 250px;height: 43px;border-radius: 7px;">SIGN IN</button>
+          <a href="/resetpassword" style="float: right;">Forgot Password?</a>
+          </br>
+          <button type="submit" class="btn btn-warning btn-lg" style=" background-color: #eb7823;border-color: #eb7823;width: 250px;height: 43px;border-radius: 7px;" data-toggle="modal" data-target="#myModal">SIGN IN</button>
          
 
           <hr class="hr-text" data-content="OR">
@@ -265,19 +264,56 @@ LEVEL 4. SETTINGS
 </div>
     </div>
     <!--  Loading Icon (Bootstrap) -->
-         <div class="jumbotron text-center" ng-show="main.loading">
+        <div class="jumbotron text-center" ng-show="main.loading">
             <span class="glyphicon glyphicon-repeat spinner"></span>
             <p>Loading....</p>
         </div>  
         </br>
         <!-- Custom Messages -->
-        <div class="row show-hide-message" ng-show="main.successMsg || main.errorMsg || facebook.errorMsg || twitter.errorMsg || google.errorMsg">
-            <div ng-class="alert">{{ main.successMsg || main.errorMsg || facebook.errorMsg || twitter.errorMsg || google.errorMsg }}</div>&nbsp
+
+
+
+
+<div class="container">
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog" ng-show="main.successMsg || main.errorMsg || facebook.errorMsg || twitter.errorMsg || google.errorMsg">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"></h4>
+        </div>
+        <div class="modal-body">
+          <div style="color: #1c1d21;">{{ main.successMsg || main.errorMsg || facebook.errorMsg || twitter.errorMsg || google.errorMsg }}</div>&nbsp
             <a ng-show="main.expired || facebook.expired || google.expired || twitter.expired" href="/resend">
                 <!-- Button to Resend an Activation Link -->
                 <button type="button" class="btn btn-success">Resend Activation Link</button>
             </a>
         </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+        <!--show hide error message-->
+        <!--<div class="row show-hide-message" ng-show="main.successMsg || main.errorMsg || facebook.errorMsg || twitter.errorMsg || google.errorMsg">
+            <div ng-class="alert">{{ main.successMsg || main.errorMsg || facebook.errorMsg || twitter.errorMsg || google.errorMsg }}</div>&nbsp
+            <a ng-show="main.expired || facebook.expired || google.expired || twitter.expired" href="/resend">
+                
+                <button type="button" class="btn btn-success">Resend Activation Link</button>
+            </a>
+        </div>-->
 
 <div class="col-md-4">
     </div>

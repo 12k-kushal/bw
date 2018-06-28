@@ -7,7 +7,7 @@ var app = angular.module('appRoutes', ['ngRoute'])
     $routeProvider
 /*
     // Route: Home             
-        .when('/', {
+        .when('/index', {
         templateUrl: 'app/views/pages/home.html'
     })*/
 

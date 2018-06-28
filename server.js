@@ -33,7 +33,7 @@ app.set('views', __dirname + '/views');
 // dev:dev@ds125489.mlab.com:25489/mydatabase
 //localhost:27017/bwdatabase
 //127.0.0.1:27017/mydatabase
-mongoose.connect('mongodb://localhost:27017/bwdatabase', function(err) {
+mongoose.connect('mongodb://127.0.0.1:27017/mydatabase', function(err) {
     if (err) {
         console.log('Not connected to the database: ' + err); // Log to console if unable to connect to database   //mongodb://root:password@ds027215.mlab.com:27215/gugui3z24
     } else {
