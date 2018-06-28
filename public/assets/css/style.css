@@ -999,76 +999,76 @@ body {
 START: LOADING ICON FOR LOGGING OUT USER 
 ===================================== */
 
-.dizzy-gillespie {
-    filter: saturate(3);
-    width: 0.1px;
-    height: 0.1px;
-    border: 40px solid transparent;
-    border-radius: 5px;
-    animation: loader 3s ease-in infinite, spin 1s linear infinite;
-    margin: auto;
+@-webkit-keyframes animIn {
+  0% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    opacity: 0;
+  }
 }
 
-.dizzy-gillespie::before {
-    filter: saturate(0.3);
-    display: block;
-    position: absolute;
-    z-index: -1;
-    margin-left: -40px;
-    margin-top: -40px;
-    content: '';
-    height: 0.1;
-    width: 0.1;
-    border: 40px solid transparent;
-    border-radius: 5px;
-    animation: loader 2s ease-in infinite reverse, spin 0.8s linear infinite reverse;
+@keyframes animIn {
+  0% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    opacity: 0;
+  }
 }
 
-.dizzy-gillespie::after {
-    display: block;
-    position: absolute;
-    z-index: 2;
-    margin-left: -10px;
-    margin-top: -10px;
-    content: '';
-    height: 20px;
-    width: 20px;
-    border-radius: 20px;
-    background-color: white;
+.loading {
+  position: absolute;
+  top: calc(50% - 5px);
+  left: 50%;
 }
 
-@keyframes loader {
-    0% {
-        border-bottom-color: transparent;
-        border-top-color: #114357
-    }
-    25% {
-        border-left-color: transparent;
-        border-right-color: #826C75
-    }
-    50% {
-        border-top-color: transparent;
-        border-bottom-color: #F29492
-    }
-    75% {
-        border-right-color: transparent;
-        border-left-color: #826C75
-    }
-    100% {
-        border-bottom-color: transparent;
-        border-top-color: #114357
-    }
+.loading .bullet {
+  position: absolute;
+  padding: 5px;
+  border-radius: 50%;
+  background: #000;
+  -webkit-animation: animIn 0.65s ease-in-out 0s infinite;
+  animation: animIn 0.65s ease-in-out 0s infinite;
 }
 
-@keyframes spin {
-    0% {
-        transform: rotate(0deg)
-    }
-    100% {
-        transform: rotate(-360deg)
-    }
+.loading .bullet:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
 }
 
+.loading .bullet:nth-child(2) {
+  -webkit-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+}
+
+.loading .bullet:nth-child(3) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+
+.loading .bullet:nth-child(4) {
+  -webkit-animation-delay: 0.45s;
+  animation-delay: 0.45s;
+}
 
 /* ===================================
 END: LOADING ICON FOR LOGGING OUT USER 

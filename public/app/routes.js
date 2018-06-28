@@ -14,23 +14,25 @@ var app = angular.module('appRoutes', ['ngRoute'])
     //Route: myprojects
     .when('/dashmyprojects',{
         templateUrl: 'app/views/pages/users/dashmyprojects.html',
-       
+       authenticated: true,
     })
 
     //Route: workflow
     .when('/dashworkflow', {
         templateUrl: 'app/views/pages/users/dashworkflow.html',
-    
+      
     })
 
     //Route: cHECKOUT
     .when('/dashcheckout', {
         templateUrl: 'app/views/pages/users/dashcheckout.html',
+        authenticated: true,
     
     })
 
     .when('/dashorders', {
         templateUrl: 'app/views/pages/users/dashorders.html',
+        authenticated: true,
     
     })
 
@@ -220,7 +222,7 @@ var app = angular.module('appRoutes', ['ngRoute'])
     //invoice
     .when('/invoice',{
         templateUrl: 'app/views/pages/users/invoice.html',
-        //authenticated: true,
+        authenticated: true,
 
     })
 

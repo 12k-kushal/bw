@@ -1546,7 +1546,7 @@ module.exports = function(router) {
                                 <li>Description:${description}</li>
                                 <li><b>Estimated cost: ${cost}</b></li>
                                 <br>
-                                <a href="www.google.com">Click here to login</a>
+                                <a href="fabtiv.com/login">Click here to login</a>
                                 </ul>
                                 `,
 

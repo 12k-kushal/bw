@@ -107,7 +107,7 @@
         </div>
         <div class="navbar-collapse collapse" >
           <ul class="nav navbar-nav">
-            <li><a href="/">Fabtiv</a></li>
+            <li><a href="/" style="font-size: 17px;">Fabtiv</a></li>
            <!-- <li><a href="/app/views/pages/index.html#services">Services</a></li>
             <li><a href="/app/views/pages/index.html#about">About</a></li>-->
           </ul>
@@ -137,19 +137,11 @@
                 text-decoration: none;
             }
             </style>
-            <li>  
-                <a ng-show="!main.isLoggedIn" href="/login" style="padding-top: 8px;">
-              <button type="button" class="btn btn-transparent">LOGIN</button>
-                </a>
-            </li>
-            <li>  
-              <a ng-show="!main.isLoggedIn" href="/register" style="padding-top: 8px;">
-              <button type="button" class="btn btn-transparent">REGISTER</button>
-                </a>
-            </li>
-            <li><a ng-show="main.isLoggedIn" href="/dashworkflow">WORKFLOW</a></li>
-            <li><a ng-show="main.isLoggedIn" href="/dashmyprojects">PROJECTS</a></li>
-            <li><a ng-show="main.isLoggedIn" href="/dashorders">ORDERS</a></li>
+            <li><a href="/dashworkflow" style="font-size: 16px;">WORKFLOW</a></li>
+            <li><a ng-show="!main.isLoggedIn" href="/login" style="font-size: 16px;">LOGIN</a></li>
+            <li><a ng-show="!main.isLoggedIn" href="/register" style="font-size: 16px;">REGISTER</a></li>  
+            <li><a ng-show="main.isLoggedIn" href="/dashmyprojects" style="font-size: 16px;">PROJECTS</a></li>
+            <li><a ng-show="main.isLoggedIn" href="/dashorders" style="font-size: 16px;">ORDERS</a></li>
             <style type="text/css">
                 .navbar-login
             {
@@ -230,7 +222,8 @@
     </header>
 
 
-    <section ng-hide="main.home" style="margin:0px; padding-top: 50px; min-height: 100vh;" >
+    <section ng-hide="main.home" style="margin:0px; padding-top: 50px; padding-bottom: 0px; min-height: 100vh;background-color: #e1e1e1;" >
+
         <div class="container-fluid" style="margin-right:15px; margin-left:15px; padding:0px;">
             <div class="row">
 
@@ -304,7 +297,6 @@
     </div>
     </section>
 
-
     <!-- Numbers -->
     <section ng-show="main.home" style="padding-bottom: 0px;">
     <div id="numbers" class="section sm-padding">
@@ -355,7 +347,7 @@
                 <div class="col-sm-3 col-xs-6">
                     <div class="number">
                         <i class="glyphicon glyphicon-file"></i>
-                        <h3 class="white-text"><span class="counter">7</span></h3>
+                        <h3 class="white-text"><span class="counter">70</span></h3>
                         <span class="white-text">Total Years of Experience</span>
                     </div>
                 </div>
@@ -455,14 +447,30 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-
                     <h2 class="section-heading">About Us</h2>
-                    <br/>
+                    <br>
                     <h4>India's First Maker Ship were Mentors become Makers along with Hardware Entrepreneurs</h4>
-                    <p style="font-style: italic; font-size: 18px">
-                    An exclusive Makership from Brahm.Works which incubates only Hardware startups aims to achieve along with our “Make in India” campaign to make India a leader in manufacturing by 2030. Our Makership program provides an opportunity for hardware startups in various parts of the world to be part of this revolution.
+                    </br></br>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-sm-6">
+                        
+                        <p style=" text-justify: inter-word; font-style: italic; font-size: 16px">
+                         An exclusive Makership from Brahm.Works which incubates only Hardware startups aims to achieve along with our “Make in India” campaign to make India a leader in manufacturing by 2030. Our Makership program provides an opportunity for hardware startups in various parts of the world to be part of this revolution.
 
-                    Having worked with more than 100 startups this new incubator model provides up to 10 Lakh rupees worth of credit to our selected startups. These credits can be later redeemed to be used in various services we provide. Having a collective experience of more than 100 years and being worked in Bay area in San Fransisco to shenzhen we provide Design, Innovation and Manufacturing capabilities to our selected startups. Our panel members does not consists of Mentors, It consists of Makers who can provide startups with services from Pixels to Patents.</>
+                         Having worked with more than 100 startups this new incubator model provides up to 10 Lakh rupees worth of credit to our selected startups. These credits can be later redeemed to be used in various services we provide. Having a collective experience of more than 100 years and being worked in Bay area in San Fransisco to shenzhen we provide Design, Innovation and Manufacturing capabilities to our selected startups. Our panel members does not consists of Mentors, It consists of Makers who can provide startups with services from Pixels to Patents.
+                         </p>
+                        </div>
+                        <div class="col-sm-6" align="right">
+                            <div class="video-wrapper">
+                            <video autoplay width="95%" height="100%" muted>
+                                <source src="assets/images/intro.mp4" type="video/mp4">
+                            </video>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+         
                 </div>
             </div>
           
@@ -594,20 +602,21 @@
         <h2 class="section-heading" style="text-align: center;">Our Clients</h2>
        <section class="customer-logos slider" >
           <div class="slide"><img src="assets/images/clients/Shell_logo.svg.png"></div>
-          <div class="slide"><img src="assets/images/clients/alstom.png"></div>
-          <div class="slide"><img src="assets/images/clients/Nokia_logo.png"></div>
-          <div class="slide"><img src="assets/images/clients/logo_drdo_gtre.jpg"></div>
           <div class="slide"><img src="assets/images/clients/itc.jpg"></div>
           <div class="slide"><img src="assets/images/clients/qEDM5_-D_400x400.jpg"></div>
           <div class="slide"><img src="assets/images/clients/somfy_logo.jpg"></div>
+          <div class="slide"><img src="assets/images/clients/nfotec.jpg"></div>
+          <div class="slide"><img src="assets/images/clients/logo_drdo_gtre.jpg"></div>
+          <div class="slide"><img src="assets/images/clients/alstom.png"></div>
+          <div class="slide"><img src="assets/images/clients/Nokia_logo.png"></div>
+          
           <div class="slide"><img src="assets/images/clients/poclain-powertrain.png"></div>
           <div class="slide"><img src="assets/images/clients/Drivamp.png"></div>
-          <div class="slide"><img src="assets/images/clients/nfotec.jpg"></div>
+          <div class="slide"><img src="assets/images/clients/bosch.png"></div>
           <div class="slide"><img src="assets/images/clients/radiant.jpg"></div>
           <div class="slide"><img src="assets/images/clients/vasmed_logo.jpg"></div>
           <div class="slide"><img src="assets/images/clients/uniqtronics.jpg"></div>
-          <div class="slide"><img src="assets/images/clients/melangesystems.png"></div>
-          <div class="slide"><img src="assets/images/clients/bosch.png"></div>
+          
        </section>
     </div>
 
@@ -831,9 +840,16 @@
                     <h4 class="modal-title">{{ main.modalHeader }}</h4>
                 </div>
                 <!-- Modal Body -->
-                <div class="modal-body">
+                <div class="modal-body" style="margin: 40px 0px;">
                     <p>{{ main.modalBody }}</p>
-                    <div ng-show="main.hideButton" class="dizzy-gillespie"></div>
+                    <div ng-show="main.hideButton" >
+                        <div class="loading">
+                          <div class="bullet"></div>
+                          <div class="bullet"></div>
+                          <div class="bullet"></div>
+                          <div class="bullet"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <!-- Modal 'Yes' & 'No' Buttons -->

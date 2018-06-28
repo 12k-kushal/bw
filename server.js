@@ -3,7 +3,7 @@ var app = express(); // Invoke express to variable for use in application
 var formidable = require('formidable');
 var upload = require('express-fileupload');
 const http = require('http');
-var port = process.env.PORT || 80; // Set default port or assign a port in enviornment
+var port = process.env.PORT || 8080; // Set default port or assign a port in enviornment
 var morgan = require('morgan'); // Import Morgan Package
 var mongoose = require('mongoose'); // HTTP request logger middleware for Node.js
 var bodyParser = require('body-parser'); // Node.js body parsing middleware. Parses incoming request bodies in a middleware before your handlers, available under req.body.
@@ -16,6 +16,7 @@ var fs = require('fs');
 var engines = require('consolidate');
 var assert = require('assert');
 var MongoClient = require('mongodb').MongoClient;
+mongoose.Promise = require('bluebird');
 
 app.use(upload()); // configure middleware
 app.use(morgan('dev')); // Morgan Middleware
@@ -32,7 +33,7 @@ app.set('views', __dirname + '/views');
 // dev:dev@ds125489.mlab.com:25489/mydatabase
 //localhost:27017/bwdatabase
 //127.0.0.1:27017/mydatabase
-mongoose.connect('mongodb://127.0.0.1:27017/mydatabase', function(err) {
+mongoose.connect('mongodb://localhost:27017/bwdatabase', function(err) {
     if (err) {
         console.log('Not connected to the database: ' + err); // Log to console if unable to connect to database   //mongodb://root:password@ds027215.mlab.com:27215/gugui3z24
     } else {
